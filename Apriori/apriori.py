@@ -30,4 +30,4 @@ results = list(rules)
 resultsinDataFrame = pd.DataFrame(inspect(results),
                                   columns=['Left Hand Side', 'Right Hand Side',
                                            'Support', 'Confidence', 'Lift'])
-print(resultsinDataFrame)
+print(resultsinDataFrame.nlargest(n=10, columns='Lift'))
